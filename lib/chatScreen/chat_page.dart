@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsappclone/chatScreen/archive_page.dart';
 import 'package:whatsappclone/chatScreen/chat_screen.dart';
 import 'package:whatsappclone/help/constants.dart';
@@ -22,13 +21,18 @@ class ChatsPage extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          GestureDetector(
-            onTap: (){
+          Container(
+            margin: EdgeInsets.only(left: 10),
+            color: Colors.transparent,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white,
+                elevation: 0
+              ),
 
-              Get.to(() => const ArchivePage());
-            },
-            child: Container(
-              margin: const EdgeInsets.only(left: 10),
+              onPressed: (){
+                Get.to(() => const ArchivePage());
+                },
               child: ListTile(
                 leading: Icon(
                   Icons.archive_outlined,
@@ -36,17 +40,11 @@ class ChatsPage extends StatelessWidget {
                 ),
                 title: Text(
                   'In archive',
-                  style: GoogleFonts.openSans(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 17,
-                    color: Colors.black,
-                  ),
+                  style: textStyle.copyWith(fontSize: 17,fontWeight: FontWeight.w400)
                 ),
               ),
             ),
           ),
-
-
 
           ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
@@ -61,19 +59,11 @@ class ChatsPage extends StatelessWidget {
                   child: ListTile(
                       trailing: Text(
                         chat_people[index].date,
-                        style: GoogleFonts.openSans(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                          color: Colors.grey[500],
-                        ),
+                        style: textStyle.copyWith(fontSize:14,fontWeight: FontWeight.w600,color: Colors.grey[500])
                       ),
                       title: Text(
                         chat_people[index].name,
-                        style: GoogleFonts.openSans(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                          color: Colors.black,
-                        ),
+                        style: textStyle.copyWith(fontSize:18,fontWeight: FontWeight.w600)
                       ),
                       leading: CircleAvatar(
                         radius: 24,
@@ -94,11 +84,7 @@ class ChatsPage extends StatelessWidget {
                           ),
                           Text(
                             chat_people[index].subtitleText,
-                            style: GoogleFonts.openSans(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 13,
-                              color: Colors.grey[500],
-                            ),
+                            style:textStyle.copyWith(fontSize:13,fontWeight: FontWeight.w600,color: Colors.grey[500])
                           ),
                         ],
                       )),
@@ -112,19 +98,12 @@ class ChatsPage extends StatelessWidget {
                   child: ListTile(
                       trailing: Text(
                         chat_people[index].date,
-                        style: GoogleFonts.openSans(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 14,
-                          color: Colors.grey[500],
-                        ),
+                        style: textStyle.copyWith(fontSize:14,fontWeight: FontWeight.w600,color: Colors.grey[500])
                       ),
                       title: Text(
                         chat_people[index].name,
-                        style: GoogleFonts.openSans(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
-                          color: Colors.black,
-                        ),
+                        style:textStyle.copyWith(fontSize:18,fontWeight: FontWeight.w600)
+
                       ),
                       leading: CircleAvatar(
                         radius: 24,
@@ -144,11 +123,8 @@ class ChatsPage extends StatelessWidget {
                           ),
                           Text(
                             chat_people[index].subtitleText,
-                            style: GoogleFonts.openSans(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 13,
-                              color: Colors.grey[500],
-                            ),
+                            style:textStyle.copyWith(fontSize:13,fontWeight: FontWeight.w600,color: Colors.grey[500])
+
                           ),
                         ],
                       )),
@@ -164,11 +140,8 @@ class ChatsPage extends StatelessWidget {
                         const SizedBox(height: 6,),
                         Text(
                           '00:15',
-                          style: GoogleFonts.openSans(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14,
-                            color: Colors.grey[500],
-                          ),
+                            style:
+                            textStyle.copyWith(fontSize:14,fontWeight: FontWeight.w600,color: Colors.grey[500])
                         ),
                         const SizedBox(height: 3.5,),
                         const Icon(Icons.volume_off,size: 18,)
@@ -176,11 +149,7 @@ class ChatsPage extends StatelessWidget {
                     ),
                     title: Text(
                       '🎓👨‍🎓',
-                      style: GoogleFonts.openSans(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Colors.black,
-                      ),
+                      style: textStyle.copyWith(fontSize:18,fontWeight: FontWeight.w600)
                     ),
                     leading: const CircleAvatar(
                       radius: 24,
@@ -192,11 +161,8 @@ class ChatsPage extends StatelessWidget {
                     ),
                     subtitle: Text(
                       'Mikasa Ackermann: I love Eren<3',
-                      style: GoogleFonts.openSans(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 13,
-                        color: Colors.grey[500],
-                      ),
+                        style: textStyle.copyWith(fontSize: 13,fontWeight: FontWeight.w600,color: Colors.grey[500])
+
                     ),
                   ),
                 );
@@ -208,19 +174,12 @@ class ChatsPage extends StatelessWidget {
                   child: ListTile(
                     trailing: Text(
                       chat_people[index].date,
-                      style: GoogleFonts.openSans(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
-                        color: Colors.grey[500],
-                      ),
+                        style: textStyle.copyWith(fontSize: 14,fontWeight: FontWeight.w600,color: Colors.grey[500])
+
                     ),
                     title: Text(
                       chat_people[index].name,
-                      style: GoogleFonts.openSans(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
-                        color: Colors.black,
-                      ),
+                      style: textStyle.copyWith(fontSize: 18,fontWeight: FontWeight.w600)
                     ),
                     leading: CircleAvatar(
                       radius: 24,
@@ -230,11 +189,7 @@ class ChatsPage extends StatelessWidget {
                     ),
                     subtitle: Text(
                       chat_people[index].subtitleText,
-                      style: GoogleFonts.openSans(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 13,
-                        color: Colors.grey[500],
-                      ),
+                      style: textStyle.copyWith(fontSize: 13,fontWeight: FontWeight.w600,color: Colors.grey[600])
                     ),
                   ),
                 );

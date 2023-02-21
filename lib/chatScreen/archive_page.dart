@@ -140,7 +140,7 @@ class _ArchivePageState extends State<ArchivePage> {
             thickness: 1,
             color: Colors.grey[200],
           ),
-      ListTile(
+          ListTile(
           trailing: Container(
             width: 65,
             child: Column(
@@ -192,7 +192,7 @@ class _ArchivePageState extends State<ArchivePage> {
 
           ListTile(
               trailing: Container(
-                width: 65,
+                width: 65atu,
                 child: Column(
                   children: [
                     const SizedBox(height: 8,),

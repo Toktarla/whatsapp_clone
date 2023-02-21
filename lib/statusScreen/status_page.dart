@@ -17,7 +17,7 @@ class StatusPage extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(left: 6),
           child: ListTile(
-            leading: Container(
+            leading: SizedBox(
               width: 45,
               child: Stack(
                 children: [
@@ -32,7 +32,6 @@ class StatusPage extends StatelessWidget {
                     child: Container(
                       height: 20,
                       width: 50,
-
                       decoration: BoxDecoration(
                         color: greenColor,
                         border: Border.all(color: Colors.white, width: 2),
@@ -40,9 +39,9 @@ class StatusPage extends StatelessWidget {
                       ),
                       child: const FittedBox(
                           child: Icon(
-                            Icons.add,
-                            color: Colors.white,
-                          )),
+                        Icons.add,
+                        color: Colors.white,
+                      )),
                     ),
                   ),
                 ],
@@ -50,18 +49,11 @@ class StatusPage extends StatelessWidget {
             ),
             title: Text(
               'My status',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-              ),
+              style: textStyle.copyWith(fontSize: 18,fontWeight: FontWeight.w600),
             ),
             subtitle: Text(
               'Press to add status',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[400],
-              ),
+              style: textStyle.copyWith(fontSize: 18,color: Colors.grey[400])
             ),
           ),
         ),
@@ -74,11 +66,7 @@ class StatusPage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'Last',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
-              ),
+              style: textStyle.copyWith(fontSize: 18,color: Colors.grey[600])
             ),
           ),
         ),
@@ -88,32 +76,24 @@ class StatusPage extends StatelessWidget {
             leading: Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(color: Colors.green, width: 3),
+                border: Border.all(color: Colors.green, width: 2),
               ),
-              child: const CircleAvatar(
-                backgroundImage:
-                CachedNetworkImageProvider(
-                  'https://i.pinimg.com/originals/01/88/ec/0188ec3975655cef4072f7591457822f.jpg',
+              child: const Padding(
+                padding:  EdgeInsets.all(2.0),
+                child:  CircleAvatar(
+                  backgroundImage: CachedNetworkImageProvider(
+                    'https://i.pinimg.com/originals/01/88/ec/0188ec3975655cef4072f7591457822f.jpg',
+                  ),
                 ),
-
-
               ),
             ),
             title: Text(
               'Nino Nakano',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
-              ),
+              style: textStyle.copyWith(fontSize: 18,color: Colors.grey[600])
             ),
             subtitle: Text(
               'Today, 15:35',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
-              ),
+              style: textStyle.copyWith(fontSize: 18,color: Colors.grey[600])
             ),
           ),
         ),
@@ -125,31 +105,25 @@ class StatusPage extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: Border.all(
                   color: Colors.green,
-                  width: 3,
+                  width: 2,
                 ),
               ),
-              child: const CircleAvatar(
-                backgroundImage: CachedNetworkImageProvider(
-                  'https://pbs.twimg.com/media/EyiZNltXMAAeeg2.jpg',
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: const CircleAvatar(
+                  backgroundImage: CachedNetworkImageProvider(
+                    'https://pbs.twimg.com/media/EyiZNltXMAAeeg2.jpg',
+                  ),
                 ),
-
               ),
             ),
             title: Text(
               'Miku Nakano',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
-              ),
+              style:textStyle.copyWith(fontSize: 18,color: Colors.grey[600])
             ),
             subtitle: Text(
               'Today, 15:35',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
-              ),
+              style: textStyle.copyWith(fontSize: 18,color: Colors.grey[600])
             ),
           ),
         ),
@@ -159,77 +133,71 @@ class StatusPage extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'Seen',
-              style: GoogleFonts.openSans(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
-              ),
+              style: textStyle.copyWith(fontSize: 18,color: Colors.grey[600])
             ),
           ),
-        ), 
-        Expanded(
-          child: Column(
-            children: [
-              Expanded(
-                child: ListView.builder(
-                    itemCount: people.length,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        margin: const EdgeInsets.only(left: 10),
-                        child: ListTile(
-                          leading: Container(
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.grey, width: 3)),
+        ),
+        Column(
+          children: [
+            SizedBox(
+              height: 200,
+              child: ListView.builder(
+                  itemCount: people.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: ListTile(
+                        leading: Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border:
+                                  Border.all(color: Colors.grey, width: 2)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(2.0),
                             child: CircleAvatar(
-                              backgroundImage:
-                              CachedNetworkImageProvider   (people[index].image)                         ),
-                          ),
-                          title: Text(
-                            people[index].name,
-                            style: GoogleFonts.openSans(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                            ),
-                          ),
-                          subtitle: Text(
-                            people[index].date,
-                            style: GoogleFonts.openSans(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.grey[600],
-                            ),
+                                backgroundImage: CachedNetworkImageProvider(
+                                    people[index].image)),
                           ),
                         ),
-                      );
-                    }),
-              ),
-              Row(
-                children: [
-                  const SizedBox(width: 60,),
-                  const Icon(Icons.lock,color: Colors.grey,size: 15,),
-                  const SizedBox(width: 10,),
-                  Text(
-                    'Your status updates are end-to-end encrypted',
-                    style: GoogleFonts.openSans(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey[600],
-                    ),
-                  ),
+                        title: Text(
+                          people[index].name,
+                          style: textStyle.copyWith(fontSize: 18,)
+                        ),
+                        subtitle: Text(
+                          people[index].date,
+                          style:textStyle.copyWith(fontSize: 18,color: Colors.grey[600])
+                        ),
+                      ),
+                    );
+                  }),
+            ),
+            const SizedBox(height: 60,),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 60,
+                ),
+                const Icon(
+                  Icons.lock,
+                  color: Colors.grey,
+                  size: 15,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Your status updates are ',
+                  style: textStyle.copyWith(fontSize: 12,color: Colors.grey[600]),
 
-
-                ],
-              ),
-
-            ],
-          ),
+                ),
+                Text(
+                  "end-to-end crypted",
+                  style: textStyle.copyWith(fontSize: 12,color: Colors.green[600]),
+                )
+              ],
+            ),
+          ],
         ),
-
-
-
-
       ],
     );
   }

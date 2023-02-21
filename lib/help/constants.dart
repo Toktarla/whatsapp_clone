@@ -8,5 +8,7 @@ TextStyle textStyle = GoogleFonts.openSans(
   color: Colors.black,
 
 );
+Color homePageBackgroundColor = const Color.fromRGBO(255, 255, 255, 1.0);
+
 
 
